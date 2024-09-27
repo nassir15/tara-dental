@@ -8109,6 +8109,100 @@ a {
               color: #155724; /* Changed to green */
             }
             
+           /* Mobile view adjustments for slider, text, and layout */
+           @media (max-width: 767px) {
+           
+             /* Slider item height and overlay adjustments */
+             .owl-carousel.home-slider .slider-item {
+                 height: 350px; /* Adjusted height for mobile view */
+                 background-position: center center;
+                 background-size: cover;
+                 position: relative;
+             }
+             .owl-carousel.home-slider .slider-item .overlay {
+                 position: absolute;
+                 top: 0;
+                 left: 0;
+                 right: 0;
+                 bottom: 0;
+                 background: rgba(0, 0, 0, 0.4); /* Slightly darker overlay for mobile */
+             }
+           
+             /* Slider text adjustments for mobile */
+             .owl-carousel.home-slider .slider-item .slider-text {
+                 position: absolute;
+                 bottom: 50px; /* Pushed text towards the bottom */
+                 left: 20px; /* Adjusted for mobile view */
+                 right: 20px;
+                 height: auto; /* Adjusted height for text container */
+                 z-index: 2;
+                 text-align: left;
+                 color: #fff;
+             }
+             .owl-carousel.home-slider .slider-item .slider-text h1 {
+                 font-size: 24px; /* Smaller heading size for mobile */
+                 line-height: 1.3;
+                 font-weight: 600;
+             }
+             .owl-carousel.home-slider .slider-item .slider-text p {
+                 font-size: 14px; /* Adjusted font size for paragraph */
+                 line-height: 1.5;
+                 margin-top: 10px;
+                 font-weight: 400;
+             }
+           
+             /* Slider navigation arrows (left-right) */
+             .owl-carousel .owl-nav .owl-prev, 
+             .owl-carousel .owl-nav .owl-next {
+                 position: absolute;
+                 top: 50%;
+                 transform: translateY(-50%);
+                 font-size: 24px; /* Smaller arrow icons for mobile */
+                 background: rgba(0, 0, 0, 0.5); /* Semi-transparent background */
+                 color: #fff;
+                 padding: 5px;
+                 border-radius: 50%;
+             }
+             .owl-carousel .owl-nav .owl-prev {
+                 left: 10px;
+             }
+             .owl-carousel .owl-nav .owl-next {
+                 right: 10px;
+             }
+           
+             /* Slider dots (pagination) adjustments for mobile */
+             .owl-carousel.home-slider .owl-dots {
+                 position: absolute;
+                 bottom: 10px;
+                 width: 100%;
+                 text-align: center;
+             }
+             .owl-carousel.home-slider .owl-dots .owl-dot {
+                 width: 12px;
+                 height: 12px;
+                 margin: 0 5px;
+                 background: #fff;
+                 border-radius: 50%;
+             }
+             .owl-carousel.home-slider .owl-dots .owl-dot.active {
+                 background: #155724; /* Active dot color */
+             }
+           
+             /* Button adjustments for mobile view */
+             .btn {
+                 font-size: 14px; /* Smaller button font size */
+                 padding: 8px 15px;
+                 border-radius: 20px;
+                 background-color: #155724; /* Primary green button color */
+                 color: white;
+                 border: none;
+                 box-shadow: none;
+             }
+             .btn:hover {
+                 background-color: #1c7d29; /* Darker green on hover */
+                 color: white;
+             }
+           }
 
       .ftco-intro {
         color: #fff; 
@@ -8213,45 +8307,99 @@ a {
         }
       }
       
-      .ftco-services {
-        padding-bottom: 0 !important; 
-      }
-      
-      .services {
-          display: block;
-          width: 100%;
-          transition: all 0.3s ease; 
-      }
-      
-      .services .icon {
-          line-height: 1.3;
-          position: relative;
-          width: 100px;
-          height: 100px;
-          background: #f8fbff;
-          margin: 0 auto;
-          border-radius: 50%;
-      }
-      
-      .services .icon span {
-          font-size: 50px;
-          background: #155724; /* Changed background color to green */
-          background: -moz-linear-gradient(-45deg, #155724 0%, #2cbcbc 100%);
-          background: -webkit-gradient(left top, right bottom, color-stop(0%, #155724), color-stop(100%, #2cbcbc));
-          background: -webkit-linear-gradient(-45deg, #155724 0%, #2cbcbc 100%);
-          background: -o-linear-gradient(-45deg, #155724 0%, #2cbcbc 100%);
-          background: -ms-linear-gradient(-45deg, #155724 0%, #2cbcbc 100%);
-          background: -webkit-linear-gradient(315deg, #155724 0%, #2cbcbc 100%);
-          background: -o-linear-gradient(315deg, #155724 0%, #2cbcbc 100%);
-          background: linear-gradient(135deg, #155724 0%, #2cbcbc 100%);
-          filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#155724', endColorstr='#00dc94', GradientType=1);
-          -webkit-background-clip: text;
-          -webkit-text-fill-color: transparent;
-      }
-      
-      .services .media-body h3 {
-          font-size: 20px; 
-      }
+      /* General styling for the services section */
+.ftco-services {
+  padding-bottom: 0 !important; 
+}
+
+/* Service block styling */
+.services {
+  display: block;
+  width: 100%;
+  transition: all 0.3s ease; 
+}
+
+/* Icon styling */
+.services .icon {
+  line-height: 1.3;
+  position: relative;
+  width: 100px;
+  height: 100px;
+  background: #f8fbff;
+  margin: 0 auto;
+  border-radius: 50%;
+}
+
+/* Icon text and gradient */
+.services .icon span {
+  font-size: 50px;
+  background: #155724;
+  background: -moz-linear-gradient(-45deg, #155724 0%, #2cbcbc 100%);
+  background: -webkit-gradient(left top, right bottom, color-stop(0%, #155724), color-stop(100%, #2cbcbc));
+  background: -webkit-linear-gradient(-45deg, #155724 0%, #2cbcbc 100%);
+  background: -o-linear-gradient(-45deg, #155724 0%, #2cbcbc 100%);
+  background: -ms-linear-gradient(-45deg, #155724 0%, #2cbcbc 100%);
+  background: -webkit-linear-gradient(315deg, #155724 0%, #2cbcbc 100%);
+  background: -o-linear-gradient(315deg, #155724 0%, #2cbcbc 100%);
+  background: linear-gradient(135deg, #155724 0%, #2cbcbc 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#155724', endColorstr='#00dc94', GradientType=1);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* Service title styling */
+.services .media-body h3 {
+  font-size: 20px; 
+}
+
+/* Mobile view adjustments */
+@media (max-width: 768px) {
+  /* Adjust container padding for mobile */
+  .ftco-services {
+      padding: 20px 0;
+      margin-top: -13vh
+  }
+
+
+  /* Adjust the service icon size */
+  .services .icon {
+      width: 80px;
+      height: 80px;
+  }
+
+  /* Reduce the icon's font size */
+  .services .icon span {
+      font-size: 40px;
+  }
+
+  /* Adjust the service title font size */
+  .services .media-body h3 {
+      font-size: 16px;
+  }
+
+  /* Adjust the paragraph font size */
+  .services .media-body p {
+      font-size: 14px;
+  }
+
+  /* Stack services vertically on mobile */
+  .col-md-3 {
+      width: 100%;
+      margin-bottom: 20px;
+  }
+
+  /* Button adjustments for mobile */
+  .btn {
+      padding: 12px 20px;
+      font-size: 16px;
+  }
+
+  /* Center button on mobile */
+  .row.justify-content-center {
+      justify-content: center !important;
+  }
+}
+
       
 /* dentist detail  */
 .about-wrap {
@@ -8815,91 +8963,165 @@ a {
     
     /* footer  */
 
-    .ftco-bg-dark {
-      background: #3c312e; 
-  }
-  .ftco-footer {
-      font-size: 16px;
-      background: #000; /* Change this to your desired color */
-      padding: 1em 0; /* Further reduced vertical padding */
-      margin: 0; /* Ensure no margins */
-  }
-  .ftco-footer h2 {
-      font-weight: 1000;
-      color: #fff !important;
-  }
-  .ftco-footer .ftco-footer-widget h2 {
-      font-weight: normal;
-      color: #fff;
-      font-size: 18px;
-      font-weight: 600; 
-      margin: 0; /* Remove margin from heading */
-  }
-  .ftco-footer p {
-      color: rgba(255, 255, 255, 0.7); 
-      margin: 0; /* Remove margin from paragraphs */
-  }
-  .ftco-footer a {
-      color: rgba(255, 255, 255, 0.7); 
-  }
-  .ftco-footer a:hover {
-      color: #fff; 
-  }
-  .ftco-footer .ftco-heading-2 {
-      font-size: 17px;
-      font-weight: 400;
-      color: #000; 
-  }
-  .ftco-footer .block-21 .text .heading {
-      font-size: 16px;
-      font-weight: 300; 
-  }
-  .ftco-footer .block-21 .text .heading a {
-      color: rgba(255, 255, 255, 0.9); 
-  }
-  .ftco-footer .block-21 .text .meta > div {
-      display: inline-block;
-      font-size: 12px;
-      margin-right: 5px; 
-  }
-  .ftco-footer-social li {
-      list-style: none;
-      margin: 0 10px; /* Reduced margin */
-      display: inline-block; 
-  }
-  .ftco-footer-social li a {
-      height: 40px; /* Reduced size */
-      width: 40px;  /* Reduced size */
-      display: block;
-      float: left;
-      background: rgba(255, 255, 255, 0.05);
-      border-radius: 50%;
-      position: relative; 
-  }
-  .ftco-footer-social li a span {
-      position: absolute;
-      font-size: 20px; /* Reduced size */
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%); 
-  }
-  .footer-small-nav > li {
-      display: inline-block; 
-  }
-  .footer-small-nav > li a {
-      margin: 0 5px; /* Reduced margin */
-  }
-  .footer-small-nav > li a:hover, 
-  .footer-small-nav > li a:focus {
-      color: #2f89fc; 
-  }
-  
-  /* Footer Bottom Adjustments */
-  .ftco-footer .row:last-child {
-      margin-top: 0; /* Remove top margin from the last row */
-  }
-/* footer end    */
+/* General styling for the footer */
+.ftco-bg-dark {
+  background: #3c312e; 
+}
 
+.ftco-footer {
+  font-size: 14px; /* Reduced font size for mobile */
+  background: #000; /* Desired background color */
+  padding: 0.5em 0; /* Reduced vertical padding */
+  margin: 0; /* Ensure no margins */
+}
+
+.ftco-footer h2 {
+  font-weight: 1000;
+  color: #fff !important;
+}
+
+.ftco-footer .ftco-footer-widget h2 {
+  font-weight: normal;
+  color: #fff;
+  font-size: 16px; /* Smaller heading size */
+  margin: 0; /* Remove margin from heading */
+}
+
+.ftco-footer p {
+  color: rgba(255, 255, 255, 0.7); 
+  margin: 0; /* Remove margin from paragraphs */
+}
+
+.ftco-footer a {
+  color: rgba(255, 255, 255, 0.7); 
+}
+
+.ftco-footer a:hover {
+  color: #fff; 
+}
+
+.ftco-footer .ftco-heading-2 {
+  font-size: 16px; /* Adjusted for mobile */
+  font-weight: 400;
+  color: #000; 
+}
+
+.ftco-footer .block-21 .text .heading {
+  font-size: 14px; /* Smaller size for mobile */
+  font-weight: 300; 
+}
+
+.ftco-footer .block-21 .text .heading a {
+  color: rgba(255, 255, 255, 0.9); 
+}
+
+.ftco-footer .block-21 .text .meta > div {
+  display: inline-block;
+  font-size: 12px;
+  margin-right: 5px; 
+}
+
+.ftco-footer-social li {
+  list-style: none;
+  margin: 0 5px; /* Further reduced margin */
+  display: inline-block; 
+}
+
+.ftco-footer-social li a {
+  height: 30px; /* Reduced size */
+  width: 30px;  /* Reduced size */
+  display: block;
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 50%;
+  position: relative; 
+}
+
+.ftco-footer-social li a span {
+  position: absolute;
+  font-size: 16px; /* Reduced size */
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%); 
+}
+
+.footer-small-nav > li {
+  display: inline-block; 
+}
+
+.footer-small-nav > li a {
+  margin: 0 3px; /* Further reduced margin */
+}
+
+.footer-small-nav > li a:hover, 
+.footer-small-nav > li a:focus {
+  color: #2f89fc; 
+}
+
+/* Footer Bottom Adjustments */
+.ftco-footer .row:last-child {
+  margin-top: 0; /* Remove top margin from the last row */
+}
+
+/* --- Mobile Optimization --- */
+/* --- Mobile Optimization for Footer --- */
+
+/* --- Mobile Optimization for Footer --- */
+
+@media (max-width: 768px) {
+  /* General footer styling */
+  .ftco-footer {
+      padding: 10px 5px; /* Minimal padding for the footer */
+      font-size: 14px; /* Adjusted font size for mobile */
+      margin: 0; /* Remove margins to avoid overflow */
+  }
+
+  /* Heading adjustments */
+  .ftco-footer h2 {
+      font-size: 16px; /* Smaller heading size */
+      margin: 5px 0; /* Small margin for spacing */
+      text-align: left; /* Ensure headings are left-aligned */
+  }
+
+  /* Paragraph text adjustments */
+  .ftco-footer p {
+      font-size: 12px; /* Reduced text size for paragraphs */
+      margin: 3px 0; /* Reduced margin for paragraphs */
+      line-height: 1.4; /* Improved line height for readability */
+  }
+
+  /* Footer widget spacing */
+  .ftco-footer-widget {
+      margin: 0; /* Remove margins between widgets */
+      padding: 0; /* Remove padding for tight layout */
+  }
+
+  /* Social icons adjustments */
+  .ftco-footer-social {
+      display: flex; /* Use flexbox for better alignment */
+      justify-content: center; /* Center the icons */
+      margin-top: 5px; /* Minimal space above the social icons */
+  }
+
+  /* Adjusting social icon size and margin */
+  .ftco-footer-social li {
+      margin: 0 4px; /* Reduced margin for social icons */
+  }
+
+  /* Links styling in the bottom row */
+  .ftco-footer .col-md-12.text-center a {
+      font-size: 12px; /* Consistent font size for links */
+      margin: 0; /* No margin for links */
+  }
+
+  /* Footer bottom row adjustments */
+  .ftco-footer .row:last-child {
+      margin-top: 5px; /* Minimal space above the last row */
+      text-align: center; /* Center-align the text */
+  }
+}
+
+
+/* footer ends  */
     .media .ftco-icon {
       width: 100px; 
     }
