@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <title><strong>TARA'S</strong> DENTAL</title>
+    <title>Tara's Dental & Aesthetic Center</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     
@@ -25,12 +25,54 @@
     <link rel="stylesheet" href="css/flaticon.css">
     <link rel="stylesheet" href="css/icomoon.css">
     <link rel="stylesheet" href="css/style.css">
+    <style>
+      .marquee {
+          overflow: hidden;
+          white-space: nowrap;
+          box-sizing: border-box;
+          color: #155724;
+          font-size: 1rem;
+          font-weight: bold;
+          background-color: #f8f9fa;
+          padding: 5px;
+          position: relative;
+      }
+  
+      .marquee-text {
+          display: inline-block;
+          animation: text-enter 20s ease-in-out forwards, marquee 30s linear infinite;
+      }
+  
+      @keyframes text-enter {
+          0% {
+              transform: translateX(100%);
+          }
+          10% {
+              transform: translateX(0); /* Make it fully visible */
+          }
+          90% {
+              transform: translateX(0); /* Hold position */
+          }
+          100% {
+              transform: translateX(-100%); /* Scroll out */
+          }
+      }
+  
+      @keyframes marquee {
+          0% {
+              transform: translateX(0);
+          }
+          100% {
+              transform: translateX(-100%); /* Scroll completely out */
+          }
+      }
+  </style>
   </head>
   <body>
     
 	  <nav class="navbar navbar-expand-lg navbar-dark ftco_navbar bg-dark ftco-navbar-light" id="ftco-navbar">
 	    <div class="container">
-	      <a class="navbar-brand" href="index.html"><strong>TARA'S</strong> DENTAL</a>
+	      <a class="navbar-brand" href="index.html"><span>Tara's </span><br> <span style=" font-size: 0.9rem; font-weight: 400;">  Dental &Aesthetic Center</span></a>
 	      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#ftco-nav" aria-controls="ftco-nav" aria-expanded="false" aria-label="Toggle navigation">
 	        <span class="oi oi-menu"></span> Menu
 	      </button>
@@ -43,7 +85,7 @@
 	          <!-- <li class="nav-item"><a href="doctors.html" class="nav-link">Doctors</a></li> -->
 	          <li class="nav-item"><a href="blog.html" class="nav-link">Blog</a></li>
 	          <li class="nav-item active"><a href="contact.html" class="nav-link">Contact</a></li>
-	          <li class="nav-item cta"><a href="contact.html" class="nav-link" data-toggle="modal" data-target="#modalRequest"><span>Make an Appointment</span></a></li>
+	          <!-- <li class="nav-item cta"><a href="contact.html" class="nav-link" data-toggle="modal" data-target="#modalRequest"><span>Make an Appointment</span></a></li> -->
 	        </ul>
 	      </div>
 	    </div>
@@ -51,7 +93,7 @@
     <!-- END nav -->
 
     <section class="home-slider owl-carousel">
-      <div class="slider-item bread-item" style="background-image: url('images/bg_1.jpg');" data-stellar-background-ratio="0.5">
+      <div class="slider-item bread-item" style="background-image: url('images/landing\ page\ 2.webp');" data-stellar-background-ratio="0.5">
         <div class="overlay"></div>
         <div class="container" data-scrollax-parent="true">
           <div class="row slider-text align-items-end">
@@ -63,6 +105,11 @@
         </div>
       </div>
     </section>
+    <div class="marquee">
+      <div class="marquee-text">
+           Welcome to TARA’S Dental & Aesthetic Center! Your health and beauty are our priority. Free Consultation & X-Ray - Every last week of the month | We offer a wide range of dental services, including cosmetic dentistry, teeth whitening, and routine check-ups. Our team is dedicated to providing you with the highest quality care in a comfortable environment.
+      </div>
+    </div>
 		
 		<section class="ftco-section contact-section ftco-degree-bg">
       <div class="container">
@@ -78,39 +125,41 @@
             <p><span>Phone:</span> <a href="tel:+916374076545">+91 63740 76545</a></p>
           </div>
           <div class="col-md-3">
-            <p><span>Email:</span> <a href="mailto:info@yoursite.com">info@yoursite.com</a></p>
+            <p><span>Email:</span> <a href="mailto:tarasmdentistry@gmail.com">tarasmdentistry@gmail.com</a></p>
           </div>
           <div class="col-md-3">
-            <p><span>Website</span> <a href="#">yoursite.com</a></p>
+            <!-- <p><span>Website</span> <a href="#">yoursite.com</a></p> -->
           </div>
         </div>
         <div class="row block-9">
-          <div class="col-md-6 pr-md-5">
-            <form action="#">
-              <div class="form-group">
-                <input type="text" class="form-control" placeholder="Your Name">
-              </div>
-              <div class="form-group">
-                <input type="text" class="form-control" placeholder="Your Email">
-              </div>
-              <div class="form-group">
-                <input type="text" class="form-control" placeholder="Subject">
-              </div>
-              <div class="form-group">
-                <textarea name="" id="" cols="30" rows="7" class="form-control" placeholder="Message"></textarea>
-              </div>
-              <div class="form-group">
-                <input type="submit" value="Send Message" class="btn btn-primary py-3 px-5">
-              </div>
+          <div class="col-md-6 pr-md-5" style="box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); padding: 20px; border-radius: 10px; background-color: #fff; max-width: 500px; margin: auto;">
+            <form onsubmit="sendEmail(event)">
+                <div class="form-group">
+                    <input type="text" id="name" class="form-control" placeholder="Your Name" required style="padding: 10px; border: 1px solid #ccc; border-radius: 5px;">
+                </div>
+                <div class="form-group">
+                    <input type="email" id="email" class="form-control" placeholder="Your Email" required style="padding: 10px; border: 1px solid #ccc; border-radius: 5px;">
+                </div>
+                <div class="form-group" style="display: flex; gap: 10px;">
+                    <input type="date" id="date" class="form-control" required style="flex: 1; padding: 10px; border: 1px solid #ccc; border-radius: 5px;">
+                    <input type="time" id="time" class="form-control" required style="flex: 1; padding: 10px; border: 1px solid #ccc; border-radius: 5px;">
+                </div>
+                <div class="form-group">
+                    <textarea id="message" cols="30" rows="5" class="form-control" placeholder="Message" required style="padding: 10px; border: 1px solid #ccc; border-radius: 5px;"></textarea>
+                </div>
+                <div class="form-group" style="text-align: center;">
+                    <input type="submit" value="Send Message" class="btn btn-primary py-3 px-5" style="background-color: #007bff; color: white; border-radius: 5px; border: none;">
+                </div>
             </form>
-          
-          </div>
+        </div>
+        
+        
 
-          <div class="col-lg-6 col-md-8 col-sm-10" data-aos="fade-up" data-aos-delay="300" style="margin: 0 auto;">
+          <div class="col-lg-6 col-md-8 col-sm-10" data-aos="fade-up" data-aos-delay="300" style="margin-top: 5vh;">
             <iframe 
               src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3887.796535898675!2d80.21733497405077!3d12.984861614589452!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a5267950b74503f%3A0x9077ebe9ca6f9de7!2sTara&#39;s%20Dental%20and%20Aesthetic%20center!5e0!3m2!1sen!2sin!4v1727090045421!5m2!1sen!2sin" 
               frameborder="0" 
-              style="border:0; width: 100%; height: 300px;" 
+              style="border:0; width: 100%; height: 400px;" 
               allowfullscreen="" 
               loading="lazy" 
               referrerpolicy="no-referrer-when-downgrade">
@@ -122,75 +171,76 @@
 
     <footer class="ftco-footer ftco-bg-dark ftco-section">
       <div class="container">
-        <div class="row mb-5">
-          <div class="col-md-3">
-            <div class="ftco-footer-widget mb-4">
-              <h2 class="ftco-heading-2">Our Mission at TARA'S Dental</h2>
-              <p>We aim to provide top-quality dental care that prioritizes your comfort and well-being. Our experienced team is committed to ensuring every visit leaves you smiling, confident, and pain-free.</p>
-            </div>
-            <ul class="ftco-footer-social list-unstyled float-md-left float-lft">
-              <li class="ftco-animate"><a href="#"><span class="icon-twitter"></span></a></li>
-              <li class="ftco-animate"><a href="#"><span class="icon-facebook"></span></a></li>
-              <li class="ftco-animate"><a href="#"><span class="icon-instagram"></span></a></li>
-            </ul>
-          </div>
-    
-          <!-- Quick Links -->
-          <div class="col-md-2">
-            <div class="ftco-footer-widget mb-4 ml-md-5">
-              <h2 class="ftco-heading-2">Quick Links</h2>
-              <ul class="list-unstyled">
-                <li><a href="#" class="py-2 d-block">About</a></li>
-                <li><a href="#" class="py-2 d-block">Features</a></li>
-                <li><a href="#" class="py-2 d-block">Projects</a></li>
-                <li><a href="#" class="py-2 d-block">Blog</a></li>
-                <li><a href="#" class="py-2 d-block">Gallery</a></li>
-                <li><a href="#" class="py-2 d-block">Contact</a></li>
-              </ul>
-            </div>
-          </div>
-    
-          <!-- Office Information -->
-          <div class="col-md-3">
-            <div class="ftco-footer-widget mb-4 justify-content-center align-items-center">
-              <h2 class="ftco-heading-2">Office</h2>
-              <div class="block-23 mb-3">
-                <ul>
-                  <li><span class="icon icon-map-marker"></span><span class="text">18A, 5th St, behind Federal Bank, Rajalakshmi Nagar, Velachery, Chennai, Tamil Nadu 600042</span></li>
-                  <li><a href="tel:+916374076545"><span class="icon icon-phone"></span><span class="text">+91 63740 76545</span></a></li>
-                  <li><a href="mailto:info@yoursite.com"><span class="icon icon-envelope"></span><span class="text">info@yoursite.com</span></a></li>
+          <div class="row mb-3"> <!-- Reduced bottom margin -->
+              <div class="col-md-3">
+                  <div class="ftco-footer-widget mb-3"> <!-- Reduced bottom margin -->
+                      <h2 class="ftco-heading-2">Our Mission at TARA'S Dental</h2>
+                      <p>We aim to provide top-quality dental care that prioritizes your comfort and well-being. Our experienced team is committed to ensuring every visit leaves you smiling, confident, and pain-free.</p>
+                  </div>
+                  <ul class="ftco-footer-social list-unstyled float-md-left float-lft">
+                    <li class="ftco-animate"><a href="https://www.linkedin.com/company/tarasdentalandaestheticcenter/?viewAsMember=true"><span class="icon-linkedin"></span></a></li>
+                    <li class="ftco-animate"><a href="https://www.facebook.com/profile.php?id=61556780617514"><span class="icon-facebook"></span></a></li>
+                    <li class="ftco-animate"><a href="https://www.instagram.com/tarasdental_aesthetic?utm_source=qr&igsh=M3A3dWY0NmI0a2Vt"><span class="icon-instagram"></span></a></li>
+                    <li class="ftco-animate"><a href="https://wa.me/916374076545"><span class="icon-whatsapp"></span></a></li>
                 </ul>
               </div>
-            </div>
-          </div>
-    
-          <!-- Working Hours -->
-          <div class="col-md-4">
-            <div class="ftco-footer-widget mb-4">
-              <h2 class="ftco-heading-2">Working Hours</h2>
-              <div class="block-23 mb-3">
-                <ul>
-                  <li><span class="icon icon-clock-o"></span><span class="text">Mon - sat: 10:00 AM - 1:00 PM</span></li>
-                  <li><span class="icon icon-clock-o"></span><span class="text">Mon - sat: 4:30 PM - 9:00 PM</span></li>
-                  <li><span class="icon icon-clock-o"></span><span class="text">Sun: ONLY FOR PRIOR APPOINTMENT</span></li>
-                </ul>
-              </div>
-            </div>
-          </div>
-        </div>
-        
-        <!-- Footer Bottom Row -->
-        <div class="row">
-          <div class="col-md-12 text-center">
-            <p>
-              Copyright &copy; All rights reserved | Developed by <a href="www.istepsolutions.com">ISTEP SOLUTIONS</a>
-            </p>
-          </div>
-        </div>
-      </div>
-    </footer>
-    
   
+              <!-- Quick Links -->
+              <div class="col-md-2">
+                  <div class="ftco-footer-widget mb-3"> <!-- Reduced bottom margin -->
+                      <h2 class="ftco-heading-2">Quick Links</h2>
+                      <ul class="list-unstyled">
+                          <li><a href="#" class="py-2 d-block">About</a></li>
+                          <li><a href="#" class="py-2 d-block">Blog</a></li>
+                          <li><a href="#" class="py-2 d-block">Gallery</a></li>
+                          <li><a href="#" class="py-2 d-block">Contact</a></li>
+                      </ul>
+                  </div>
+              </div>
+  
+              <!-- Office Information -->
+              <div class="col-md-3">
+                  <div class="ftco-footer-widget mb-3"> <!-- Reduced bottom margin -->
+                      <h2 class="ftco-heading-2">Address</h2>
+                      <div class="block-23 mb-3">
+                          <ul>
+                              <li><span class="icon icon-map-marker"></span><span class="text">18A, 5th St, behind Federal Bank, Rajalakshmi Nagar, Velachery, Chennai, Tamil Nadu 600042</span></li>
+                              <li><a href="tel:+916374076545"><span class="icon icon-phone"></span><span class="text">+91 63740 76545</span></a></li>
+                              <li><a href="tarasmdentistry@gmail.com"><span class="icon icon-envelope"></span><span class="text">tarasmdentistry@gmail.com</span></a></li>
+                          </ul>
+                      </div>
+                  </div>
+              </div>
+  
+              <!-- Working Hours -->
+              <div class="col-md-4">
+                  <div class="ftco-footer-widget mb-3"> <!-- Reduced bottom margin -->
+                      <h2 class="ftco-heading-2">Working Hours</h2>
+                      <div class="block-23 mb-3">
+                          <ul>
+                              <li><span class="icon icon-clock-o"></span><span class="text">Mon - Sat: 10:00 AM - 1:00 PM</span></li>
+                              <li><span class="icon icon-clock-o"></span><span class="text">Mon - Sat: 4:30 PM - 9:00 PM</span></li>
+                              <li><span class="icon icon-clock-o"></span><span class="text">Sun: ONLY FOR PRIOR APPOINTMENT</span></li>
+                          </ul>
+                      </div>
+                  </div>
+              </div>
+          </div>
+  
+          <!-- Footer Bottom Row -->
+          <div class="row">
+              <div class="col-md-12 text-center">
+                  <p>
+                      Copyright &copy; All rights reserved | Developed by <a href="www.istepsolutions.com">ISTEP SOLUTIONS</a>
+                  </p>
+              </div>
+          </div>
+      </div>
+  </footer>
+    
+  <a href="https://wa.me/916374076545" class="whatsapp-icon" id="whatsapp-icon">
+    <img src="images/4-2-whatsapp-transparent.png" alt="WhatsApp Icon" width="50" height="50">
+  </a>
 
   <!-- loader -->
   <div id="ftco-loader" class="show fullscreen"><svg class="circular" width="48px" height="48px"><circle class="path-bg" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke="#eeeeee"/><circle class="path" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke-miterlimit="10" stroke="#F96D00"/></svg></div>
@@ -244,6 +294,31 @@
       </div>
     </div>
   </div>
+  <script>
+    document.addEventListener("DOMContentLoaded", function() {
+      var whatsappIcon = document.getElementById("whatsapp-icon");
+  
+      // Hide WhatsApp icon initially
+      whatsappIcon.style.display = "none";
+  
+      window.addEventListener('scroll', function() {
+        var scrollTop = document.documentElement.scrollTop || document.body.scrollTop;
+        var scrollHeight = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+        var scrollPercentTop = (scrollTop / scrollHeight) * 100;
+  
+        // Show WhatsApp icon when scrolled more than 5% down from the top
+        if (scrollPercentTop > 20) {
+          whatsappIcon.style.display = "block";
+          whatsappIcon.classList.add("show");
+        } else {
+          whatsappIcon.classList.remove("show");
+          setTimeout(function() {
+            whatsappIcon.style.display = "none";
+          }, 500); // Wait for fade-out before hiding
+        }
+      });
+    });
+  </script>
 
 
   <script src="js/jquery.min.js"></script>
@@ -263,6 +338,40 @@
   <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBVWaKrjvy3MaE7SQ74_uJiULgl1JY0H2s&sensor=false"></script>
   <script src="js/google-map.js"></script>
   <script src="js/main.js"></script>
+  <script src="https://smtpjs.com/v3/smtp.js"></script>
+  <script>
+    function sendEmail(event) {
+        event.preventDefault(); // Prevent form submission
+
+        // Send email using Elastic Email SMTP
+        Email.send({
+            Host: "smtp.elasticemail.com",
+            Username: "nassir1572003@gmail.com",  // Your Elastic Email username
+            Password: "5EAB99A3254D100AC3272F8BA99E9EBA9A17",  // Your Elastic Email password
+            To: 'tarasmdentistry@gmail.com',  // Recipient's email
+            From: document.getElementById("email").value,  // Sender's email (from the form)
+            Subject: "New Contact Form Inquiry",
+            Body: "Name: " + document.getElementById("name").value +
+                  "<br>Email: " + document.getElementById("email").value +
+                  "<br>Date: " + document.getElementById("date").value +
+                  "<br>Time: " + document.getElementById("time").value +
+                  "<br>Message: " + document.getElementById("message").value,
+            Port: 2525 // Specifying the port number
+        }).then(
+            function(message) {
+                console.log("Email sent response:", message);
+                alert("Message Sent Successfully");
+                document.querySelector('form').reset();  // Reset form fields after successful submission
+            }
+        ).catch(
+            function(error) {
+                console.error("Email sending failed:", error);
+                alert("Failed to send message. Please try again later.");
+            }
+        );
+    }
+</script>
+
     
   </body>
 </html>
